@@ -1,0 +1,18 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+{% load static %}
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+<div class="row row-bottom-padded-md">
+    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+        <img class="img-responsive" src="{% static 'portfolio/profile2.jpeg' %}" >
+    </div>
+    <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+        <h2 class="fh5co-heading" style="margin-top: 10px;">Hossein Kavand</h2>
+        {% for about in abouts %}
+        <p style="color: #228896;font-weight: bold;font-size: 3.5rem;font-family: 'Caveat', cursive; margin: 0px;">  {{about.text}}   </p>
+        {% endfor %}
+    </div>
+    
+</div>
+    {% endblock %}

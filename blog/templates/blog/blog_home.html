@@ -1,0 +1,24 @@
+{% extends 'portfolio/base.html' %}
+
+
+
+{% block content %}
+<h1 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">My Blogs:<span><small>{{blog_count}} blog{{blog_count|pluralize}}</small></span></h1>
+<div class="row">
+    {% for bl in blogs %}
+    <div class="col-md-6">
+        <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
+            <div class="fh5co-icon">
+                <i class="icon-paperplane"></i>
+            </div>
+            <div class="fh5co-text">
+                <a href="{% url 'blog:detail' bl.id %}"><h2>{{bl.title}}</h2></a>
+                <span><small>{{bl.date|date:'M d Y'}}</small></span>
+                <p>{{bl.text|striptags|truncatechars:60}}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+    {% endblock %}
